@@ -50,3 +50,17 @@ nums = [-37,37,-9,2,47,18,13,-11,9,-28]
 // nums = [-1,2,-3,3]
 // nums = [-1,10,6,7,-7,1]
 console.log(findMaxK(nums))
+
+
+
+// Uploaded Mine Solution Only
+// var findMaxK2 = function(nums) {
+//     let res = -1;
+//     let numSet = new Set(nums);
+//     for (let num of numSet) {
+//         if (numSet.has(-num)) {
+//             res = Math.max(res, num);
+//         }
+//     }
+//     return res;
+// };
