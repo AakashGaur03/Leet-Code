@@ -45,7 +45,11 @@
 // Explanation: The sum of all XOR totals for every subset is 480.
 
 
+var subsetXORSum = function (nums) {
+    let sumTotal = 0;
 
-var subsetXORSum = function(nums) {
-    
+    for (let num of nums) {
+        sumTotal |= num;
+    }
+    return sumTotal << (nums.length - 1);
 };
