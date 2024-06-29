@@ -1,0 +1,20 @@
+/**
+ * @param {number} n
+ * @param {number[][]} edges
+ * @return {number[][]}
+ */
+var getAncestors = function (n, edges) {
+    var map = Array.from({ length: n }, () => new Set());
+    var res = Array.from({ length: n }, () => []);
+    var visited = new Uint8Array(n);
+
+    var dfs = (v, p) => {
+        visited[v] = 1;
+        if (v !== p) res[v].push(p);
+        for (var x of map[v]) if (!visited[x]) dfs(x, p);
+    };
+
+    edges.forEach(([u, v]) => map[u].add(v));
+    for (let i = 0; i < n; ++i) visited.fill(0), dfs(i, i);
+    return res;
+};
